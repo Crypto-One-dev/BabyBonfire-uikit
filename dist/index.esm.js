@@ -344,7 +344,7 @@ var Icon$Q = function (props) {
 
 var Icon$P = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
-        React.createElement("image", { width: "32", height: "32", href: "/babybonfire/logo.png" })));
+        React.createElement("image", { width: "32", height: "32", href: "/shrew/logo.png" })));
 };
 
 var Icon$O = function (props) {
@@ -1167,7 +1167,7 @@ var Skeleton = function (_a) {
 };
 var templateObject_1$i, templateObject_2$8, templateObject_3$5, templateObject_4$2, templateObject_5$1;
 
-var Handle = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  background-color: #fd9600;\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: #fd9600;\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])));
+var Handle = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  background-color: #002d4e;\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: #002d4e;\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])));
 var Input = styled.input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
     var theme = _a.theme;
     return theme.shadows.focus;
@@ -1868,8 +1868,9 @@ var Icon$q = function (props) {
 };
 
 var Logo$1 = function (_a) {
-    _a.isDark; var props = __rest(_a, ["isDark"]);
-    return (React.createElement(Svg, __assign({ viewBox: "0 0 300 100" }, props)));
+    var isDark = _a.isDark, props = __rest(_a, ["isDark"]);
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 300 100" }, props),
+        React.createElement("image", { width: "300", height: "100", href: isDark ? '/shrew/LogoDark.png' : '/shrew/LogoWhite.png' })));
 };
 
 var Icon$p = function (props) {
@@ -2091,7 +2092,7 @@ var Logo = function (_a) {
         React.createElement(Logo$1, { className: "desktop-icon", isDark: isDark })));
     return (React.createElement("div", { style: { display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' } },
         React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "24px" }, isPushed ? (React.createElement(Icon$u, { width: "24px", color: "textSubtle" })) : (React.createElement(Icon$v, { width: "24px", color: "textSubtle" }))),
-        isAbsoluteUrl ? (React.createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React.createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
+        isAbsoluteUrl ? (React.createElement(StyledLink, { as: "a", href: href, target: "_blank", "aria-label": "Pancake home page" }, innerLogo)) : (React.createElement(StyledLink, { to: href, target: "_blank", "aria-label": "Pancake home page" }, innerLogo))));
 };
 var templateObject_1$c;
 
@@ -2324,8 +2325,10 @@ var PanelBody = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
             return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
-                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                    React.createElement(MenuLink, { href: item.href }, item.label))); })));
+                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick }, item.target === true ?
+                    React.createElement(MenuLink, { href: item.href, target: "_blank" }, item.label)
+                    :
+                        React.createElement(MenuLink, { href: item.href }, item.label))); })));
         }
         return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
             React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
@@ -2805,18 +2808,18 @@ var templateObject_1;
 
 var baseColors = {
     failure: "#ED4B9E",
-    primary: "#fd9600",
-    primaryBright: "#b34107",
-    primaryDark: "#2e1001",
-    secondary: "#fce2d4",
-    success: "#ab3900",
-    successalt: "#4a1a01",
+    primary: "#30d5cf",
+    primaryBright: "#085c5c",
+    primaryDark: "#1f2a32",
+    secondary: "#30d5cf",
+    success: "#32D9C8",
+    successalt: "#e2f4ff",
     warning: "#FFB237",
 };
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#cf6e00", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#f06822", textwhite: "#FFFFFF", textDisabled: "#BDC2C4", textSubtle: "#f06822", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#001b2d", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textwhite: "#FFFFFF", textDisabled: "#BDC2C4", textSubtle: "#002d4e", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#0399f9", background: "#1b3a4f", backgroundDisabled: "#001b2d", contrast: "#FFFFFF", invertedContrast: "#001b2d", input: "#001b2d", primaryDark: "#0399f9", tertiary: "#001b2d", text: "#e2f4ff", textwhite: "#e2f4ff", textDisabled: "#3c4e5a", textSubtle: "#bbc8d0", borderColor: "#e2f4ff", card: "#00101b", gradients: {
