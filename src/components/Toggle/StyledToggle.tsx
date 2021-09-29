@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Handle = styled.div`
-  background-color: #002d4e;
+  background-color: #fd9600;
   border-radius: 50%;
   cursor: pointer;
   height: 32px;
