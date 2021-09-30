@@ -120,9 +120,14 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/shrewdotcom",
+        href: "https://t.me/BabyBonfireBSC",
+      },
+      {
+        label: "中文",
+        href: "https://t.me/BabyBonfireCH",
       }
     ],
+    
   },
   {
     label: "Discord",
