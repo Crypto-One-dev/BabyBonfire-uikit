@@ -2836,7 +2836,7 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#cf6e00", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#fd9600", textwhite: "#FFFFFF", textDisabled: "#BDC2C4", textSubtle: "#fd9600", borderColor: "#b06a04", card: "#c8f1e7", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#cf6e00", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#fd9600", textwhite: "#FFFFFF", textDisabled: "#BDC2C4", textSubtle: "#fd9600", borderColor: "#b06a04", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#0399f9", background: "#1b3a4f", backgroundDisabled: "#001b2d", contrast: "#FFFFFF", invertedContrast: "#001b2d", input: "#001b2d", primaryDark: "#0399f9", tertiary: "#001b2d", text: "#fd9600", textwhite: "#fd9600", textDisabled: "#fd9600", textSubtle: "#fd9600", borderColor: "#b06a04", card: "#00101b", gradients: {
